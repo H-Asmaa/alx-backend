@@ -51,13 +51,12 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
         startIndex, endIndex = index_range(page, page_size)
         data = self.dataset()
+        total_pages = math.ceil(len(data) / page_size) if page_size > 0 else 0
         return {
             "page_size": page_size,
             "page": page,
             "data": data[startIndex:endIndex],
-            "next_page": page + 1
-            if page + 1 <= math.ceil(len(data) / page_size)
-            else None,
+            "next_page": page + 1 if page + 1 <= total_pages else None,
             "prev_page": page - 1 if page - 1 >= 1 else None,
-            "total_pages": math.ceil(len(data) / page_size),
+            "total_pages": total_pages,
         }
