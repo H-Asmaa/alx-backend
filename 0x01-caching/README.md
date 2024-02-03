@@ -6,7 +6,7 @@
 - [What LRU means](#what-lru-means)
 - [What MRU means](#what-mru-means)
 - [What LFU means](#what-lfu-means)
-- [What the purpose of a caching system](#what-the-purpose-of-a-caching-system)
+- [What the purpose of a caching system](#what-is-the-purpose-of-a-caching-system)
 - [What limits a caching system have](#what-limits-a-caching-system-have)
 
 ## Introduction to caching
@@ -184,5 +184,7 @@ class LFUCache(BaseCaching):
         return self.cache_data[key]
 ```
 
-## What the purpose of a caching system
+## What is the purpose of a caching system
+The purpose of the caching system is to make data retrieval faster and more accessible. It also helps minimize the latency related to data fetching since it keeps a copy of used data. This conserves resources as well ...
 ## What limits a caching system have
+One of the limitations that can come to mind is the update of data. Keeping data in the cache is great be we have to make sure that data is being updated when necessary.
