@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """Last In, First Out Cache (FIFO)."""
+    """Last In, First Out Cache (LIFO)."""
 
     lastItemKey = None
 
