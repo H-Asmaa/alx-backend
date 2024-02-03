@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 
 class LFUCache(BaseCaching):
-    """Least Frequently Used Cache (FIFO)."""
+    """Least Frequently Used Cache (LFU)."""
 
     def __init__(self):
         """The init of the class."""
