@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-
+"""
+0x02. i18n
+"""
 from flask import Flask, render_template
 
 app = Flask(__name__)
