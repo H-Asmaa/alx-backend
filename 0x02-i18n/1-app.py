@@ -20,7 +20,7 @@ app.config.from_object(Config)
 
 
 @app.route("/")
-def hello():
+def main():
     """A basic flask method."""
     return render_template("1-index.html")
 
