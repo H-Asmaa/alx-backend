@@ -37,6 +37,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """A method that returns a dictionary containing indexes..."""
         assert index is None or isinstance(index, int)
         data = self.__dataset
         next_index = index + page_size if index is not None else 0
