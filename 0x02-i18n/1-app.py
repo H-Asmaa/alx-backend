@@ -14,7 +14,7 @@ class Config(object):
     """The configuration class for the application."""
 
     LANGUAGES = ["en", "fr"]
-    BABEL_DEFAULT_LOCAL = "en"
+    BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
