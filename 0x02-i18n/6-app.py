@@ -32,7 +32,7 @@ app.config.from_object(Config)
 def main():
     """The main method."""
     user = before_request()
-    return render_template("5-index.html", logged_in_as=user)
+    return render_template("6-index.html", logged_in_as=user)
 
 
 @babel.localeselector
