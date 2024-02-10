@@ -22,13 +22,13 @@ app.config.from_object(Config)
 
 
 @app.route("/")
-def main():
+def main() -> str:
     """A basic flask method."""
     return render_template("3-index.html")
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """Determine which locale to use based on user's request header."""
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
