@@ -6,12 +6,11 @@ from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
-
 app = Flask(__name__)
 babel = Babel(app)
 
 
-class Config(object):
+class Config:
     """The configuration class for the application."""
 
     LANGUAGES = ["en", "fr"]
@@ -22,16 +21,16 @@ class Config(object):
 app.config.from_object(Config)
 
 
-@babel.localeselector
-def get_locale():
-    """Determine which locale to use based on user's request header."""
-    return request.accept_languages.best_match(app.config["LANGUAGES"])
-
-
 @app.route("/")
 def main():
     """A basic flask method."""
     return render_template("2-index.html")
+
+
+@babel.localeselector
+def get_locale():
+    """Determine which locale to use based on user's request header."""
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 if __name__ == "__main__":
