@@ -41,8 +41,11 @@ def get_locale():
     language = request.args.get("locale")
     if language and language in app.config["LANGUAGES"]:
         return language
-    return request.accept_languages.best_match(app.config["LANGUAGES"])
-
+    if hasattr(g, "user") and g.user and "locale" in g.user and g.user["locale"] in app.config["LANGUAGES"]:
+        return g.user["locale"]
+    if request.accept_languages.best_match(app.config["LANGUAGES"]):
+        return request.accept_languages.best_match(app.config["LANGUAGES"])
+    return app.config["BABEL_DEFAULT_LOCALE"]
 
 def get_user():
     """A method that verifies a user."""
