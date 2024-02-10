@@ -37,7 +37,7 @@ def main():
 
 @babel.localeselector
 def get_locale():
-    """Determine which locale to use based on user's request header."""
+    """Determine which locale to use based on user's request header ."""
     language = request.args.get("locale")
     if language and language in app.config["LANGUAGES"]:
         return language
