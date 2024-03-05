@@ -6,7 +6,7 @@ const client = redis.createClient();
 function setNewSchool(schoolName, value) {
   client.set(schoolName, value, (error) => {
     if (!error) {
-      console.log(`${schoolName} Has been set to the value ${value}`);
+      redis.print(`${schoolName} Has been set to the value ${value}`);
     }
   });
 }
